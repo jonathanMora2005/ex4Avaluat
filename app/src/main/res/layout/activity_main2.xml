@@ -4,38 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="#E2F2DEC2"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity2">
     <!-- Título de la encuesta -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
         android:text="Pagina 1"
+        android:textColor="#FFEB3B"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#FF5722"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
-        android:gravity="center" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccione el Tipo de Masa:"
-        android:textSize="16sp"
-        android:textColor="#FF5722"
-
-        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:text="Seleccione el Tipo de Masa:"
+
+        android:textColor="#FBFBFB"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
     <Spinner
         android:id="@+id/spinnerTipoMasa"
@@ -57,13 +57,15 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre:"
-        android:textSize="16sp"
-        android:textColor="#FF5722"
-        app:layout_constraintTop_toBottomOf="@id/spinnerTipoMasa"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"/>
+        android:text="Nombre:"
+        android:background="#AD2E2C2C"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerTipoMasa" />
 
     <EditText
         android:id="@+id/editTextNombre"
@@ -85,51 +87,53 @@
         android:id="@+id/textViewTamaño"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccione el Tamaño:"
-        android:textSize="16sp"
-        android:textColor="#FF5722"
-        app:layout_constraintTop_toBottomOf="@id/editTextNombre"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"/>
+        android:layout_marginEnd="10dp"
+        android:text="Seleccione el Tamaño"
+        android:textColor="#E6E6E6"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNombre" />
 
     <RadioGroup
         android:id="@+id/radioGroupTamaño"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/textViewTamaño"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp">
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:background="#BA232323"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTamaño">
 
         <RadioButton
             android:id="@+id/radioButtonChico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#FF5722"
+            android:buttonTint="#FFFFFF"
             android:onClick="MP"
             android:text="Pequeño"
-            android:textColor="#FF5722" />
+            android:textColor="#D9D9D9" />
 
         <RadioButton
-            android:checked="true"
             android:id="@+id/radioButtonMediano"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#FF5722"
+            android:buttonTint="#FFFFFF"
+            android:checked="true"
             android:onClick="MM"
             android:text="Mediano"
-            android:textColor="#FF5722" />
+
+            android:textColor="#EFEFEF" />
 
         <RadioButton
             android:id="@+id/radioButtonGrande"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#FF5722"
+            android:buttonTint="#E6E6E6"
             android:onClick="MG"
             android:text="Grande"
-            android:textColor="#FF5722" />
+            android:textColor="#FFFFFF" />
     </RadioGroup>
 
 
@@ -142,6 +146,7 @@
         android:background="@drawable/borderradious"
         android:onClick="IrPagina2"
         android:padding="10dp"
+        android:backgroundTint="#FFEB3B"
         android:text="Get Started"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
