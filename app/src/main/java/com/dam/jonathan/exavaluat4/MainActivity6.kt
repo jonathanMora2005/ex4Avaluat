@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity6 : AppCompatActivity() {
     private var pizza: Pizza? = null
     fun IrPagina1(view: View){
-        var i = Intent(AActivity@this, MainActivity6::class.java)
+        var i = Intent(AActivity@this, MainActivity7::class.java)
         i.putExtra("pizza", pizza)
         startActivity(i)
     }
