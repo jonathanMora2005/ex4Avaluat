@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">exAvaluat4</string>
+    <string-array name="tipos_masa">
+        <item>Delgada</item>
+        <item>Gruesa</item>
+        <item>Integral</item>
+        <item>Sin gluten</item>
+        <item>Crusty</item>
+    </string-array>
+    <string-array name="tipos_espaciales">
+        <item>Normal</item>
+        <item>Vegeteriana</item>
+        <item>Vegana</item>
+
+    </string-array>
+</resources>
