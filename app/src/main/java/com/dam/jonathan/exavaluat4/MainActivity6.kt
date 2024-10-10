@@ -15,11 +15,21 @@ class MainActivity6 : AppCompatActivity() {
         i.putExtra("pizza", pizza)
         startActivity(i)
     }
+    fun picant(view : View) {
+        pizza?.setEsPicante()
+    }
+    fun quezoExtra(view: View) {
+        pizza?.setQuezoExtra()
+    }
+    fun masaRellena(view: View){
+        pizza?.setMasaRellena();
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main6)
         pizza = intent.getSerializableExtra("pizza") as? Pizza
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

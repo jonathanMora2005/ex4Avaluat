@@ -2,6 +2,9 @@ package com.dam.jonathan.exavaluat4
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -9,6 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,19 +29,19 @@ class MainActivity2 : AppCompatActivity() {
 fun MP(view: View) {
     pizza?.let {
 
-        it.setTamaño("Pequeña")
+        it.setTamaño("pequeña")
     }
 }
     fun MM(view: View) {
         pizza?.let {
 
-            it.setTamaño("Mediana")
+            it.setTamaño("mediana")
         }
     }
     fun MG(view: View) {
         pizza?.let {
 
-            it.setTamaño("Grande")
+            it.setTamaño("grande")
         }
     }
 
@@ -46,30 +50,28 @@ fun MP(view: View) {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
         pizza = intent.getSerializableExtra("pizza") as? Pizza
-
         editTextNombre = findViewById(R.id.editTextNombre)
-
-        editTextNombre.setOnEditorActionListener { v, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_DONE ||
-                (event != null && event.action == KeyEvent.ACTION_DOWN && event.keyCode == KeyEvent.KEYCODE_ENTER)
-            ) {
-                // Llama a tu función aquí cuando el usuario presiona "Enter"
-                CanviarNom(v.text.toString())
-                true
-            } else {
-                false
+        editTextNombre.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
-        }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                Log.i("tgv","uh7")
+                if (!editable.isNullOrEmpty()) {
+                    pizza?.nombre = editTextNombre.text.toString()
+                }
+            }
+        })
         val spinnerTipoMasa: Spinner = findViewById(R.id.spinnerTipoMasa)
         spinnerTipoMasa.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                // Aquí se ejecuta cuando un ítem es seleccionado
                 canviarMasa(view)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-                // Método requerido pero que no necesitas usar si no lo deseas
             }
         }
         val adapter = ArrayAdapter.createFromResource(

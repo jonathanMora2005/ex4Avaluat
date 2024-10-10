@@ -19,6 +19,43 @@ public class Pizza implements Serializable {
         return piña;
     }
 
+    public double getPrecio() {
+        double preu = 5;
+        switch (getTamaño()) {
+            case "pequeña":
+                preu += 0.5;
+                break;
+            case "mediana":
+                preu += 1;
+                break;
+            case "grande":
+                preu += 1.5;
+                break;
+        }
+        if(isEsPicante()) {
+            preu += 0.5;
+        }
+        if(isMasaRellena()){
+            preu += 0.5;
+        }
+        if (isQuezoExtra()){
+            preu += 0.5;
+
+        }
+        if (isSetas()) {
+            preu += 0.5;
+        }
+        if (isPiña()) {
+            preu += 0.5;
+        }
+        precio = preu;
+        return preu;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public boolean isSetas() {
         return setas;
     }
@@ -42,7 +79,7 @@ public class Pizza implements Serializable {
         this.tipoMasa = tipoMasa;
     }
 
-    private String tamaño = "Pequeño";
+    private String tamaño = "pequeña";
     private String tipoMasa = "Normal";
 
     public String getNombre() {
@@ -55,6 +92,14 @@ public class Pizza implements Serializable {
 
     private int base = 1;
     private double precio = 5;
+
+    public int getBase() {
+        return base;
+    }
+
+    public void setBase(int base) {
+        this.base = base;
+    }
 
     public Pizza() {
         IniciComanda = new Date();
@@ -76,14 +121,81 @@ public class Pizza implements Serializable {
         return esVegetariana;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public void setEsVegetariana(boolean esVegetariana) {
         this.esVegetariana = esVegetariana;
     }
 
     private boolean esPicante;
-    private int cantidad;
+    private int cantidad = 1;
+    private double precioTotal;
+
+
+    public double getPrecioTotal() {
+        return precio*cantidad;
+    }
+
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal = precioTotal;
+    }
+
+    public Date getIniciComanda() {
+        return IniciComanda;
+    }
+
+    public void setIniciComanda(Date iniciComanda) {
+        IniciComanda = iniciComanda;
+    }
+
+    public boolean isQuezoExtra() {
+        return quezoExtra;
+    }
+
+    public boolean isEsPicante() {
+        return esPicante;
+    }
+
+    public void setEsPicante() {
+        if (esPicante){
+            esPicante = false;
+        }else {
+            esPicante = true;
+
+        }
+    }
+
+    public void setQuezoExtra() {
+        if (quezoExtra){
+            quezoExtra = false;
+        }else {
+            quezoExtra = true;
+
+        }
+    }
+
     private boolean quezoExtra;
     private boolean masaRellena;
+
+    public boolean isMasaRellena() {
+        return masaRellena;
+    }
+
+    public void setMasaRellena() {
+        if (masaRellena){
+            masaRellena = false;
+        }else {
+            masaRellena = true;
+
+        }
+    }
+
     public void canviarBase() {
         if (base == 1){
             base = 2;

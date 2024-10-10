@@ -14,76 +14,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Extras"
+        android:text="@string/Extras"
+        android:textColor="#FFFFFF"
         android:textSize="40sp"
-        android:textColor="#FFEB3B"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="300dp"
+
+    <CheckBox
+        android:id="@+id/checkBoxPicante"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#D1000000"
-        android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_get_started"
+        android:layout_marginTop="10dp"
+        android:buttonTint="#FF5722"
+        android:onClick="picant"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:text="@string/picant"
+
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxMasaRellena"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxMasaRellena" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMasaRellena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:buttonTint="#FF5722"
+        android:onClick="masaRellena"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:text="@string/masa"
+        android:textColor="#FFFFFF"
+
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxQuesoExtra"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxQuesoExtra" />
+
+    <CheckBox
+        android:id="@+id/checkBoxQuesoExtra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:buttonTint="#FF5722"
+        android:onClick="quezoExtra"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:text="@string/quezo"
+
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView6">
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:buttonTint="#FF5722"
-                android:scaleX="1.5"
-                android:scaleY="1.5"
-                android:text="Picante"
-                android:textColor="#FFFFFF" />
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:buttonTint="#FF5722"
-                android:scaleX="1.5"
-                android:scaleY="1.5"
-                android:text="MasaRellena"
-                android:textColor="#FFFFFF" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:buttonTint="#FF5722"
-                android:scaleX="1.5"
-                android:scaleY="1.5"
-                android:text="QuesoExtra"
-                android:textColor="#FFFFFF" />
-        </RadioGroup>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/button_get_started"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/borderradious"
         android:onClick="IrPagina1"
         android:padding="10dp"
-        android:text="Get Started"
+        android:text="@string/s"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -36,6 +36,7 @@ class MainActivity5 : AppCompatActivity() {
                     pizza?.setEsVegetariana(true)
                     pizza?.setEsVegana(false)
                 }
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {

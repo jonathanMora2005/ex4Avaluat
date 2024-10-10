@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">exAvaluat4</string>
+    <string name="base">Pizza Base</string>
+    <string name="next">Personalitzar</string>
+    <string name="tb">Seleccione el Tipo de Masa:</string>
+    <string name="n">Nombre</string>
+    <string name="st">Seleccione el Tamaño</string>
+    <string name="s">Siguiente</string>
+    <string name="piña">PIÑA?</string>
+    <string name="champiñons">Champiñones?</string>
+    <string name="espacials">Obciones Espaciales</string>
+    <string name="Extras">Extras</string>
+    <string name="quezo">Queso Extra</string>
+    <string name="masa">Masa Rellena</string>
+    <string name="picant">Picante</string>
+
     <string-array name="tipos_masa">
         <item>Delgada</item>
         <item>Gruesa</item>

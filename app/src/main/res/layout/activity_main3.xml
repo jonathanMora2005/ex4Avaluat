@@ -12,28 +12,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PIÑA?"
+        android:text="@string/piña"
+        android:textColor="#FF5722"
         android:textSize="54sp"
         android:textStyle="bold"
-        android:textColor="#FF5722"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pagina 2"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#FF5722"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
-        android:gravity="center" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -93,7 +79,7 @@
         android:background="@drawable/borderradious"
         android:onClick="IrPagina3"
         android:padding="10dp"
-        android:text="Get Started"
+        android:text="@string/s"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
